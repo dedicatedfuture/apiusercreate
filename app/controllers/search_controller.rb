@@ -8,8 +8,8 @@ class SearchController < ApplicationController
         name = params[:name]
         email = params[:email]
         @user = User.create(:name => name, :email => email)
-        
-        render json: @result
+
+        render json: @user
     # end
 		
 		# render json: {itunes: @response}
