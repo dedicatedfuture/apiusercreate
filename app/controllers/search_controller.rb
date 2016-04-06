@@ -10,7 +10,7 @@ class SearchController < ApplicationController
         @user = User.create(:name => name, :email => email)
         
         render json: @result
-    end
+    # end
 		
 		# render json: {itunes: @response}
 	end
