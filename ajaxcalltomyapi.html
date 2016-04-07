@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax call to my api</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+
+	
+
+	$('#posts_button').click(function(e){
+		e.preventDefault();
+
+		$.get( 
+			"http://quiet-plains-20243.herokuapp.com/", 
+			{ name: $('#name').val(), email: $('#email').val() }
+		).done(function( data ) {
+			console.log(data)
+		  $( "body" 
+		  	).append( "   Name: " + data.name 
+		  	).append("    Email: " + data.email)
+		}, "json" );
+			
+
+	
+  	});
+
+    });
+
+
+	</script>
+</head>
+<body>
+
+<form>
+  User name <input type="text" id="name"><br />
+  User email: <input type="text" id="email"><br />
+  <input type="submit" value="Create User" id="posts_button">
+</form>
+
+<div id="output" width: "300" height:"300">
+
+</div>
+
+</body>
+</html>
